@@ -1,0 +1,52 @@
+:root {
+    --main-silver_sand: #C5C6C7;
+    --main-aquamarine: #66FCF1;
+    --main-keppel: #45A29E;
+    --main-ebony_clay: #1F2833;
+    --main-woodsmoke: #0B0C10;
+}
+
+/* Reset values */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* General set-up */
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #c5c6c7;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    background: #1f2833 no-repeat center top;
+    background-size: 100vw 100vh;
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--main-silver_sand);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+#quote-box {
+    display: block;
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
