@@ -32,8 +32,7 @@ const DATA = [
     author: "George Costanza",
   },
   {
-    quote:
-      "I’m not a lesbian! I hate men, but I’m not a lesbian.",
+    quote: "I’m not a lesbian! I hate men, but I’m not a lesbian.",
     author: "Elaine Benes",
   },
   {
@@ -67,12 +66,8 @@ class QuoteMachine extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentQuote: -1,
+      currentQuote: randomNum(-1),
     };
-  }
-
-  componentWillMount() {
-    this.setQuote(-1);
   }
 
   setQuote(number) {
@@ -82,6 +77,10 @@ class QuoteMachine extends React.Component {
 
   render() {
     const currentQuote = this.state.currentQuote;
+    const quoteText =
+      '"' + DATA[currentQuote].quote + '" - ' + DATA[currentQuote].author;
+    const quoteText2 = quoteText.replace(/\s/g, "%20");
+    const href = "https://twitter.com/intent/tweet?text=" + quoteText2;
     return (
       <wrapper id="quote-box">
         <div>
@@ -90,7 +89,7 @@ class QuoteMachine extends React.Component {
         <button id="new-quote" onClick={() => this.setQuote(currentQuote)}>
           New quote
         </button>
-        <a href="https://twitter.com/intent/tweet?text=Hello%20world" id="tweet-quote">
+        <a id="tweet-quote" href={href} target="_blank">
           Tweet Quote
         </a>
       </wrapper>
