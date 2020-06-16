@@ -54,9 +54,10 @@ class Quote extends React.Component {
   render() {
     const number = this.props.number;
     return (
-      <div>
+      <div id="quote">
         <div id="text">"{DATA[number].quote}"</div>
-        <div id="author">{DATA[number].author}</div>
+        <br />
+        <div id="author">- {DATA[number].author}</div>
       </div>
     );
   }
@@ -83,15 +84,16 @@ class QuoteMachine extends React.Component {
     const href = "https://twitter.com/intent/tweet?text=" + quoteText2;
     return (
       <wrapper id="quote-box">
-        <div>
-          <Quote number={currentQuote} />
-        </div>
+        <Quote number={currentQuote} />
         <button id="new-quote" onClick={() => this.setQuote(currentQuote)}>
           New quote
         </button>
-        <a id="tweet-quote" href={href} target="_blank">
-          Tweet Quote
-        </a>
+        <a
+          className="fab fa-twitter-square"
+          id="tweet-quote"
+          href={href}
+          target="_blank"
+        ></a>
       </wrapper>
     );
   }
