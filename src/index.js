@@ -51,10 +51,20 @@ function randomNum(current) {
 }
 
 class Quote extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  getId = () => {
+    const id = Math.floor(Math.random()*10000);
+    console.log(id);
+    return id;
+  };
+
   render() {
     const number = this.props.number;
     return (
-      <div id="quote">
+      <div key={this.getId()} id="quote">
         <div id="text">"{DATA[number].quote}"</div>
         <br />
         <div id="author">- {DATA[number].author}</div>
